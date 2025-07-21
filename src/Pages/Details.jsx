@@ -35,8 +35,6 @@ const Details = () => {
     const navigate=useNavigate()
     const location=useLocation();
 
-    console.log(location)
-
     const [mern ,setMern]=useState(mernStack);
     const [detailsData, setDetailsData]=useState({});
 

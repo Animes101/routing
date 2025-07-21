@@ -25,7 +25,6 @@ const Contack = () => {
       age,
     }
 
-    console.log(newUser)
     setSearchParems({name:name, age:age})
 
     setUsers({name:'', age:''})

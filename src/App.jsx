@@ -6,9 +6,15 @@ import Blogs from './Pages/Blogs'
 import Error from './Pages/Error'
 import NavBar from './Components/NavBar'
 import Details from './Pages/Details'
-import User from './Pages/User'
+import { useState } from 'react'
+import Protected from './Pages/Protected'
+
 
 function App() {
+
+  const [isLogin, setIslogin]=useState(false);
+
+
 
   return (
     <BrowserRouter>
@@ -17,12 +23,14 @@ function App() {
         <Route path='/'  element={<Home />}   />
         <Route path='/contact' element={<Contack />} />
         <Route path='/blogs' element={<Blogs />} />
-        <Route path='/blogs/:name' element={<Details />} />
+        <Route path='/blogs/:name' element={<Protected isLogin={isLogin} >
+          <Details />
+        </Protected>} />
         <Route path='*' element={<Error />} />
-        <Route path='/user' element={<User />} />
       </Routes>
+      <button onClick={()=>setIslogin(!isLogin)}>{isLogin ? 'Logout': 'Login'}</button>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
