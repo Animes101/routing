@@ -1,22 +1,55 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Link,useSearchParams} from 'react-router-dom'
 
 
 
 const Contack = () => {
-    const navigate=useNavigate();
+  const [searchParems, setSearchParems]=useSearchParams();
+  const [users, setUsers]=useState({name:'',age:''});
+  const {name,age}=users;
+
+
+  const handleChange=(e)=>{
+
+    const {name,value}=e.target
+
+
+    setUsers({...users,[name]:value});
+  }
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    const newUser={
+      name,
+      age,
+    }
+
+    console.log(newUser)
+    setSearchParems({name:name, age:age})
+
+    setUsers({name:'', age:''})
+
+
+  }
+
+
   return (
     <div>
         <h1>Contack</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellendus eligendi eos voluptatum obcaecati distinctio omnis earum hic placeat quos nemo nesciunt delectus culpa odit soluta, assumenda minima, voluptate facere?
-
-        </p>
+        
+        <form onSubmit={handleSubmit} action="">
+          <input onChange={handleChange} value={name} type="text" name="name" placeholder='Name' id="" />
+          <input onChange={handleChange} value={age} type="number" name="age" placeholder='Age' id="" />
+          <button>Submit</button>
+        </form>
         <Link to={'/'}>Go To Home</Link>
+        <div>
+          <h1>{searchParems.get('name')}</h1>
+          <h1>{searchParems.get('age')}</h1>
+        </div>
 
-
-        {/* useNavigate */}
-
-        <button onClick={()=>navigate('/contact')}>Goto Contact</button>
+        
     </div>
   )
 }

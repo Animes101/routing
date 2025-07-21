@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams ,useLocation} from 'react-router-dom'
 
 const mernStack = [
   {
@@ -32,12 +32,15 @@ const mernStack = [
 
 const Details = () => {
 
+    const navigate=useNavigate()
+    const location=useLocation();
+
+    console.log(location)
+
     const [mern ,setMern]=useState(mernStack);
     const [detailsData, setDetailsData]=useState({});
 
     const  {name}=useParams()
-
-    console.log(detailsData);
 
 
     useEffect(()=>{
@@ -53,6 +56,13 @@ const Details = () => {
         <h2>{detailsData.type}</h2>
         <p>{detailsData.description}</p>
         <a href={`${detailsData.url}`}>url</a>
+
+
+        <button onClick={()=>navigate('/contact')}>Goto Contact</button>
+
+        <p>{location.state.description}</p>
+        <p>{location.state.name}</p>
+        <p>{location.state.type}</p>
     </div>
   )
 }

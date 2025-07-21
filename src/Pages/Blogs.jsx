@@ -52,7 +52,7 @@ const Blogs = () => {
             <h1>{name}</h1>
             <h3>{type}</h3>
             <p>{trancket(description,10)}</p>
-            <Link to={name} >Learn More</Link>
+            <Link to={name} state={{name,description,type}} >Learn More</Link>
             <a target='_blank' href={`${url}`}>Resorch</a>
 
 

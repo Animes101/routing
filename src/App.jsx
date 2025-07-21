@@ -6,6 +6,7 @@ import Blogs from './Pages/Blogs'
 import Error from './Pages/Error'
 import NavBar from './Components/NavBar'
 import Details from './Pages/Details'
+import User from './Pages/User'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/blogs/:name' element={<Details />} />
         <Route path='*' element={<Error />} />
+        <Route path='/user' element={<User />} />
       </Routes>
     </BrowserRouter>
   )
