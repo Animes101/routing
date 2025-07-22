@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
-const User = () => {
+const User = ({handleIncrement,count}) => {
   const [student, setStudent] = useState();
+
+  console.log('render memo')
 
   useEffect(() => {
     fetch('http://localhost:5101/student')
@@ -10,6 +12,11 @@ const User = () => {
       .catch((err) => console.error('Fetch error:', err));
   }, []);
 
+
+  const handleClick=()=>{
+    handleIncrement();
+
+  }
 
 
   return (
@@ -23,7 +30,12 @@ const User = () => {
                 <p>{age}</p>
                 <p>{email}</p>
                 <h3>{course}</h3>
+
+
+<h1>{count}</h1>
+                <button onClick={handleClick}>+</button>
             </div>
+            
         )
       })}
 
@@ -31,4 +43,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default memo(User);
