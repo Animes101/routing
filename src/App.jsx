@@ -8,6 +8,7 @@ import NavBar from './Components/NavBar'
 import Details from './Pages/Details'
 import { useState } from 'react'
 import Protected from './Pages/Protected'
+import User from './Pages/User'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/blogs/:name' element={<Protected isLogin={isLogin} >
           <Details />
         </Protected>} />
+        <Route path='/user' element={<User />} />
         <Route path='*' element={<Error />} />
       </Routes>
       <button onClick={()=>setIslogin(!isLogin)}>{isLogin ? 'Logout': 'Login'}</button>

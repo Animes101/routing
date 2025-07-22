@@ -1,0 +1,39 @@
+{
+    "student":[
+  {
+    "id": 1,
+    "name": "Animes Barman",
+    "age": 20,
+    "email": "animes@example.com",
+    "course": "MERN Stack"
+  },
+  {
+    "id": 2,
+    "name": "Sadia Rahman",
+    "age": 22,
+    "email": "sadia@example.com",
+    "course": "Python"
+  },
+  {
+    "id": 3,
+    "name": "Naim Uddin",
+    "age": 19,
+    "email": "naim@example.com",
+    "course": "JavaScript"
+  },
+  {
+    "id": 4,
+    "name": "Shakil Hossain",
+    "age": 21,
+    "email": "shakil@example.com",
+    "course": "Data Science"
+  },
+  {
+    "id": 5,
+    "name": "Mitu Akter",
+    "age": 20,
+    "email": "mitu@example.com",
+    "course": "Web Design"
+  }
+]
+}
