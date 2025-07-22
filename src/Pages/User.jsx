@@ -18,7 +18,7 @@ const User = () => {
       {student?.map((item)=>{
         const {name,age,course,email}=item
         return(
-            <div>
+            <div key={name}>
                 <h1>{name}</h1>
                 <p>{age}</p>
                 <p>{email}</p>

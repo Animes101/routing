@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useNavigate, useParams ,useLocation} from 'react-router-dom'
 
+
+
 const mernStack = [
   {
     name: "MongoDB",
@@ -49,6 +51,7 @@ const Details = () => {
     },[name])
   return (
     <div>
+      
         <h1>Details</h1>
         <h1>{detailsData.name}</h1>
         <h2>{detailsData.type}</h2>

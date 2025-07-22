@@ -11,6 +11,8 @@ import Protected from './Pages/Protected'
 import User from './Pages/User'
 
 
+
+
 function App() {
 
   const [isLogin, setIslogin]=useState(false);
@@ -20,7 +22,7 @@ function App() {
   return (
     <BrowserRouter>
     <NavBar />
-      <Routes>
+          <Routes>
         <Route path='/'  element={<Home />}   />
         <Route path='/contact' element={<Contack />} />
         <Route path='/blogs' element={<Blogs />} />
@@ -30,6 +32,7 @@ function App() {
         <Route path='/user' element={<User />} />
         <Route path='*' element={<Error />} />
       </Routes>
+    
       <button onClick={()=>setIslogin(!isLogin)}>{isLogin ? 'Logout': 'Login'}</button>
     </BrowserRouter>
   )
